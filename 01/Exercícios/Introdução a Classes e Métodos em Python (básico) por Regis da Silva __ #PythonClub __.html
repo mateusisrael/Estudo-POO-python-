@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)http://pythonclub.com.br/introducao-classes-metodos-python-basico.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>.gitter-hidden{box-sizing:border-box;display:none}.gitter-icon{box-sizing:border-box;width:22px;height:22px;fill:currentColor}.gitter-chat-embed{box-sizing:border-box;z-index:100;position:fixed;top:0;left:60%;bottom:0;right:0;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;background-color:#fff;border-left:1px solid #333;box-shadow:-12px 0 18px 0 rgba(50,50,50,.3);transition:transform .3s cubic-bezier(.16,.22,.22,1.7)}@context border-box{.gitter-chat-embed{box-sizing:border-box;background-color:#fff}}.gitter-chat-embed.is-collapsed:not(.is-loading){box-sizing:border-box;transform:translateX(110%)}.gitter-chat-embed:after{box-sizing:border-box;content:"";z-index:-1;position:absolute;top:0;left:100%;bottom:0;right:-100%;background-color:#fff}@context border-box{.gitter-chat-embed:after{box-sizing:border-box;background-color:#fff}}@media(max-width:1150px){.gitter-chat-embed{box-sizing:border-box;left:45%}}@media(max-width:944px){.gitter-chat-embed{box-sizing:border-box;left:30%}}@media(max-width:600px){.gitter-chat-embed{box-sizing:border-box;left:15%}}@media(max-width:500px){.gitter-chat-embed{box-sizing:border-box;left:0;border-left:none}}.gitter-chat-embed>iframe{box-sizing:border-box;-ms-flex:1;flex:1;width:100%;height:100%;border:0}.gitter-chat-embed-loading-wrapper{box-sizing:border-box;position:absolute;top:0;left:0;bottom:0;right:0;display:none;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}.is-loading .gitter-chat-embed-loading-wrapper{box-sizing:border-box;display:-ms-flexbox;display:flex}.gitter-chat-embed-loading-indicator{box-sizing:border-box;opacity:.75;background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNzkyIDE3OTIiIGZpbGw9IiMzYTMxMzMiPjxwYXRoIGQ9Ik01MjYgMTM5NHEwIDUzLTM3LjUgOTAuNXQtOTAuNSAzNy41cS01MiAwLTkwLTM4dC0zOC05MHEwLTUzIDM3LjUtOTAuNXQ5MC41LTM3LjUgOTAuNSAzNy41IDM3LjUgOTAuNXptNDk4IDIwNnEwIDUzLTM3LjUgOTAuNXQtOTAuNSAzNy41LTkwLjUtMzcuNS0zNy41LTkwLjUgMzcuNS05MC41IDkwLjUtMzcuNSA5MC41IDM3LjUgMzcuNSA5MC41em0tNzA0LTcwNHEwIDUzLTM3LjUgOTAuNXQtOTAuNSAzNy41LTkwLjUtMzcuNS0zNy41LTkwLjUgMzcuNS05MC41IDkwLjUtMzcuNSA5MC41IDM3LjUgMzcuNSA5MC41em0xMjAyIDQ5OHEwIDUyLTM4IDkwdC05MCAzOHEtNTMgMC05MC41LTM3LjV0LTM3LjUtOTAuNSAzNy41LTkwLjUgOTAuNS0zNy41IDkwLjUgMzcuNSAzNy41IDkwLjV6bS05NjQtOTk2cTAgNjYtNDcgMTEzdC0xMTMgNDctMTEzLTQ3LTQ3LTExMyA0Ny0xMTMgMTEzLTQ3IDExMyA0NyA0NyAxMTN6bTExNzAgNDk4cTAgNTMtMzcuNSA5MC41dC05MC41IDM3LjUtOTAuNS0zNy41LTM3LjUtOTAuNSAzNy41LTkwLjUgOTAuNS0zNy41IDkwLjUgMzcuNSAzNy41IDkwLjV6bS02NDAtNzA0cTAgODAtNTYgMTM2dC0xMzYgNTYtMTM2LTU2LTU2LTEzNiA1Ni0xMzYgMTM2LTU2IDEzNiA1NiA1NiAxMzZ6bTUzMCAyMDZxMCA5My02NiAxNTguNXQtMTU4IDY1LjVxLTkzIDAtMTU4LjUtNjUuNXQtNjUuNS0xNTguNXEwLTkyIDY1LjUtMTU4dDE1OC41LTY2cTkyIDAgMTU4IDY2dDY2IDE1OHoiLz48L3N2Zz4=);animation:spin 2s infinite linear}@keyframes spin{0%{box-sizing:border-box;transform:rotate(0deg)}to{box-sizing:border-box;transform:rotate(359.9deg)}}.gitter-chat-embed-action-bar{box-sizing:border-box;position:absolute;top:0;left:0;right:0;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end;padding-bottom:.7em;background:linear-gradient(180deg,#fff 0,#fff 50%,hsla(0,0%,100%,0))}.gitter-chat-embed-action-bar-item{box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;width:40px;height:40px;padding-left:0;padding-right:0;opacity:.65;background:none;background-position:50%;background-repeat:no-repeat;background-size:22px 22px;border:0;outline:none;cursor:pointer;cursor:hand;transition:all .2s ease}.gitter-chat-embed-action-bar-item:focus,.gitter-chat-embed-action-bar-item:hover{box-sizing:border-box;opacity:1}.gitter-chat-embed-action-bar-item:active{box-sizing:border-box;filter:hue-rotate(80deg) saturate(150)}.gitter-chat-embed-action-bar-item-pop-out{box-sizing:border-box;margin-right:-4px;background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTcxLjQyOSIgZmlsbD0iIzNhMzEzMyI+PHBhdGggZD0iTTE1Ny4xNDMsMTAzLjU3MXYzNS43MTRjMCw4Ljg1NC0zLjE0NCwxNi40MjYtOS40MzEsMjIuNzEzcy0xMy44NTgsOS40MzEtMjIuNzEyLDkuNDMxSDMyLjE0MyBjLTguODU0LDAtMTYuNDI1LTMuMTQ0LTIyLjcxMi05LjQzMVMwLDE0OC4xNCwwLDEzOS4yODVWNDYuNDI5YzAtOC44NTQsMy4xNDQtMTYuNDI1LDkuNDMxLTIyLjcxMiBjNi4yODctNi4yODcsMTMuODU4LTkuNDMxLDIyLjcxMi05LjQzMWg3OC41NzJjMS4wNDEsMCwxLjg5NiwwLjMzNSwyLjU2NiwxLjAwNGMwLjY3LDAuNjcsMS4wMDQsMS41MjUsMS4wMDQsMi41NjdWMjUgYzAsMS4wNDItMC4zMzQsMS44OTctMS4wMDQsMi41NjdjLTAuNjcsMC42Ny0xLjUyNSwxLjAwNC0yLjU2NiwxLjAwNEgzMi4xNDNjLTQuOTExLDAtOS4xMTUsMS43NDktMTIuNjEyLDUuMjQ2IHMtNS4yNDYsNy43MDEtNS4yNDYsMTIuNjEydjkyLjg1NmMwLDQuOTExLDEuNzQ5LDkuMTE1LDUuMjQ2LDEyLjYxMnM3LjcwMSw1LjI0NSwxMi42MTIsNS4yNDVIMTI1YzQuOTEsMCw5LjExNS0xLjc0OCwxMi42MTEtNS4yNDUgYzMuNDk3LTMuNDk3LDUuMjQ2LTcuNzAxLDUuMjQ2LTEyLjYxMnYtMzUuNzE0YzAtMS4wNDIsMC4zMzQtMS44OTcsMS4wMDQtMi41NjdjMC42Ny0wLjY2OSwxLjUyNS0xLjAwNCwyLjU2Ny0xLjAwNGg3LjE0MyBjMS4wNDIsMCwxLjg5NywwLjMzNSwyLjU2NywxLjAwNEMxNTYuODA5LDEwMS42NzQsMTU3LjE0MywxMDIuNTI5LDE1Ny4xNDMsMTAzLjU3MXogTTIwMCw3LjE0M3Y1Ny4xNDMgYzAsMS45MzUtMC43MDcsMy42MDktMi4xMjEsNS4wMjJjLTEuNDEzLDEuNDE0LTMuMDg4LDIuMTIxLTUuMDIxLDIuMTIxYy0xLjkzNSwwLTMuNjA5LTAuNzA3LTUuMDIyLTIuMTIxbC0xOS42NDQtMTkuNjQzIGwtNzIuNzY3LDcyLjc2OWMtMC43NDQsMC43NDQtMS42LDEuMTE1LTIuNTY3LDEuMTE1cy0xLjgyMy0wLjM3MS0yLjU2Ny0xLjExNUw3Ny41NjcsMTA5LjcxYy0wLjc0NC0wLjc0NC0xLjExNi0xLjYtMS4xMTYtMi41NjcgYzAtMC45NjcsMC4zNzItMS44MjIsMS4xMTYtMi41NjZsNzIuNzY4LTcyLjc2OGwtMTkuNjQ0LTE5LjY0M2MtMS40MTMtMS40MTQtMi4xMi0zLjA4OC0yLjEyLTUuMDIyYzAtMS45MzUsMC43MDctMy42MDksMi4xMi01LjAyMiBDMTMyLjEwNSwwLjcwNywxMzMuNzc5LDAsMTM1LjcxNSwwaDU3LjE0M2MxLjkzNCwwLDMuNjA4LDAuNzA3LDUuMDIxLDIuMTIxQzE5OS4yOTMsMy41MzQsMjAwLDUuMjA4LDIwMCw3LjE0M3oiLz48L3N2Zz4=)}.gitter-chat-embed-action-bar-item-collapse-chat{box-sizing:border-box;background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNzEuNDI5IDE3MS40MjkiIGZpbGw9IiMzYTMxMzMiPjxwYXRoIGQ9Ik0xMjIuNDMzLDEwNi4xMzhsLTE2LjI5NSwxNi4yOTVjLTAuNzQ0LDAuNzQ0LTEuNiwxLjExNi0yLjU2NiwxLjExNmMtMC45NjgsMC0xLjgyMy0wLjM3Mi0yLjU2Ny0xLjExNmwtMTUuMjktMTUuMjkgbC0xNS4yOSwxNS4yOWMtMC43NDQsMC43NDQtMS42LDEuMTE2LTIuNTY3LDEuMTE2cy0xLjgyMy0wLjM3Mi0yLjU2Ny0xLjExNmwtMTYuMjk0LTE2LjI5NWMtMC43NDQtMC43NDQtMS4xMTYtMS42LTEuMTE2LTIuNTY2IGMwLTAuOTY4LDAuMzcyLTEuODIzLDEuMTE2LTIuNTY3bDE1LjI5LTE1LjI5bC0xNS4yOS0xNS4yOWMtMC43NDQtMC43NDQtMS4xMTYtMS42LTEuMTE2LTIuNTY3czAuMzcyLTEuODIzLDEuMTE2LTIuNTY3IEw2NS4yOSw0OC45OTZjMC43NDQtMC43NDQsMS42LTEuMTE2LDIuNTY3LTEuMTE2czEuODIzLDAuMzcyLDIuNTY3LDEuMTE2bDE1LjI5LDE1LjI5bDE1LjI5LTE1LjI5IGMwLjc0NC0wLjc0NCwxLjYtMS4xMTYsMi41NjctMS4xMTZjMC45NjcsMCwxLjgyMiwwLjM3MiwyLjU2NiwxLjExNmwxNi4yOTUsMTYuMjk0YzAuNzQ0LDAuNzQ0LDEuMTE2LDEuNiwxLjExNiwyLjU2NyBzLTAuMzcyLDEuODIzLTEuMTE2LDIuNTY3bC0xNS4yOSwxNS4yOWwxNS4yOSwxNS4yOWMwLjc0NCwwLjc0NCwxLjExNiwxLjYsMS4xMTYsMi41NjcgQzEyMy41NDksMTA0LjUzOSwxMjMuMTc3LDEwNS4zOTQsMTIyLjQzMywxMDYuMTM4eiBNMTQ2LjQyOSw4NS43MTRjMC0xMS4wMTItMi43MTctMjEuMTY4LTguMTQ4LTMwLjQ2OSBzLTEyLjc5Ny0xNi42NjctMjIuMDk4LTIyLjA5OFM5Ni43MjYsMjUsODUuNzE0LDI1cy0yMS4xNjgsMi43MTYtMzAuNDY5LDguMTQ3UzM4LjU3OSw0NS45NDUsMzMuMTQ3LDU1LjI0NlMyNSw3NC43MDMsMjUsODUuNzE0IHMyLjcxNiwyMS4xNjgsOC4xNDcsMzAuNDY5czEyLjc5NywxNi42NjYsMjIuMDk4LDIyLjA5OHMxOS40NTcsOC4xNDgsMzAuNDY5LDguMTQ4czIxLjE2OC0yLjcxNywzMC40NjktOC4xNDggczE2LjY2Ni0xMi43OTcsMjIuMDk4LTIyLjA5OFMxNDYuNDI5LDk2LjcyNiwxNDYuNDI5LDg1LjcxNHogTTE3MS40MjksODUuNzE0YzAsMTUuNTUxLTMuODMyLDI5Ljg5My0xMS40OTYsNDMuMDI0IGMtNy42NjQsMTMuMTMzLTE4LjA2MiwyMy41My0zMS4xOTQsMzEuMTk0Yy0xMy4xMzIsNy42NjQtMjcuNDc0LDExLjQ5Ni00My4wMjQsMTEuNDk2cy0yOS44OTItMy44MzItNDMuMDI0LTExLjQ5NiBjLTEzLjEzMy03LjY2NC0yMy41MzEtMTguMDYyLTMxLjE5NC0zMS4xOTRDMy44MzIsMTE1LjYwNywwLDEwMS4yNjUsMCw4NS43MTRTMy44MzIsNTUuODIyLDExLjQ5Niw0Mi42OSBjNy42NjQtMTMuMTMzLDE4LjA2Mi0yMy41MzEsMzEuMTk0LTMxLjE5NEM1NS44MjIsMy44MzIsNzAuMTY0LDAsODUuNzE0LDBzMjkuODkzLDMuODMyLDQzLjAyNCwxMS40OTYgYzEzLjEzMyw3LjY2NCwyMy41MywxOC4wNjIsMzEuMTk0LDMxLjE5NEMxNjcuNTk3LDU1LjgyMiwxNzEuNDI5LDcwLjE2NCwxNzEuNDI5LDg1LjcxNHoiLz48L3N2Zz4=)}.gitter-open-chat-button{z-index:100;position:fixed;bottom:0;right:10px;padding:1em 3em;background-color:#36bc98;border:0;border-top-left-radius:.5em;border-top-right-radius:.5em;font-family:sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;text-align:center;text-decoration:none;cursor:pointer;cursor:hand;transition:all .3s ease}.gitter-open-chat-button,.gitter-open-chat-button:visited{box-sizing:border-box;color:#fff}.gitter-open-chat-button:focus,.gitter-open-chat-button:hover{box-sizing:border-box;background-color:#3ea07f;color:#fff}.gitter-open-chat-button:focus{box-sizing:border-box;box-shadow:0 0 8px rgba(62,160,127,.6);outline:none}.gitter-open-chat-button:active{box-sizing:border-box;color:#eee}.gitter-open-chat-button.is-collapsed{box-sizing:border-box;transform:translateY(120%)}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PythonClub, ">
+    <meta name="theme-color" content="#101212">
+
+        <link rel="alternate" href="http://pythonclub.com.br/feeds/all.atom.xml" type="application/atom+xml" title="PythonClub Full Atom Feed">
+        <link rel="alternate" href="http://pythonclub.com.br/feeds/all.rss.xml" type="application/rss+xml" title="PythonClub Full RSS Feed">
+
+    <link rel="shortcut icon" href="http://pythonclub.com.br/theme/images/favicon.ico">
+
+            <title>Introdução a Classes e Métodos em Python (básico) por Regis da Silva // #PythonClub // </title>
+
+    <meta property="fb:app_id" content="1487080281503641">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Introdução a Classes e Métodos em Python (básico)">
+    <meta property="og:site_name" content="PythonClub">
+    <meta property="og:url" content="http://pythonclub.com.br/introducao-classes-metodos-python-basico.html">
+    <meta property="og:description" content="Abordaremos aqui o básico sobre o uso de classes e métodos e a manipulação de dados em Python.">
+    <meta property="og:image" content="http://res.cloudinary.com/diu8g9l0s/image/upload/v1400201393/pythonclub/logo_275x130.png">
+
+    <link rel="stylesheet" href="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/pure-min.css">
+    <link rel="stylesheet" href="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/font-awesome.min.css">
+    <link rel="stylesheet" href="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/pure.css">
+    <link rel="stylesheet" href="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/custom.css">
+
+    <link rel="stylesheet" href="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/pygments.css">
+
+
+
+    <div class="fit-vids-style">­<style>               .fluid-width-video-wrapper {                 width: 100%;                              position: relative;                       padding: 0;                            }                                                                                   .fluid-width-video-wrapper iframe,        .fluid-width-video-wrapper object,        .fluid-width-video-wrapper embed {           position: absolute;                       top: 0;                                   left: 0;                                  width: 100%;                              height: 100%;                          }                                       </style></div><script type="text/javascript" async="" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/linkid.js"></script><script src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/cb=gapi.loaded_1" async=""></script><script src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/cb=gapi(1).loaded_0" async=""></script><script id="twitter-wjs" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/widgets.js"></script><script id="facebook-jssdk" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/sdk.js"></script><script async="" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/analytics.js"></script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-50935105-1', 'pythonclub.com.br');
+      ga('require', 'linkid', 'linkid.js');
+      ga('send', 'pageview');
+
+    </script>
+    <!-- transifex -->
+    <!-- <script type="text/javascript">  -->
+    <!-- window.liveSettings = {  -->
+    <!--     api_key: "f8fd260a9bdc4e9195c80e31416bb254",  -->
+    <!--     picker: "bottom-right",  -->
+    <!--     detectlang: true,  -->
+    <!--     autocollect: true  -->
+    <!-- };  -->
+    <!-- </script>  -->
+    <!-- <script type="text/javascript" src="//cdn.transifex.com/live.js"></script>  -->
+    <!-- end transifex -->
+    <meta name="google-site-verification" content="XQc_QtnTecI9nxAfplXGtECCpZQDwbDRcn7pyDVa1LE">
+<script type="text/javascript" async="" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/embed.js"></script><script type="text/javascript" charset="utf-8" async="" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/button.3ebb4253c7cb2cc3c9eaac42044fc82c.js"></script><link rel="preload" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.04dd90af7bc65bdd97911fd885cc83a9.css"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.4d4c2bb66cc9fcd5a16c7ff1c1fbbe79.js"><link rel="preload" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.fef702bed571136dc98b1dd41e1b906f.js"><link rel="preload" as="script" href="https://disqus.com/next/config.js"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f5f6f7;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:-webkit-sticky;top:0}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_in_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_out_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bubble_pop_in{animation-duration:250ms;animation-name:fb_customer_chat_bubble_bounce_in_animation}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_v2_mobile_chat_started{0%{opacity:0;top:20px}100%{opacity:1;top:0}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}</style><script src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/alfalfa.4a5fcca1fe50a757044dfd331b660625.js" async="" charset="UTF-8"></script></head>
+
+<body style="">
+<div class="pure-g-r" id="layout">
+    <div class="sidebar sidebar-article pure-u">
+        <header class="header-article">
+            <hgroup>
+                <a href="http://pythonclub.com.br/author/regis-da-silva.html" title="See posts by Regis da Silva">
+                        <img class="article-avatar" alt="Regis da Silva" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/2a2df360031bb022af11138a2a4a8db9.png">
+                </a>
+                <h2 class="article-info">Regis da Silva</h2>
+    			<ul class="author-social">
+                    <li>
+                        <a target="_blank" href="https://github.com/rg3915">
+                            <i class="fa fa-lg fa-fw fa-github"></i>
+                            <strong>Github</strong>
+                        </a>
+                    </li>
+                </ul>
+                <h5>Publicado em:</h5>
+                <p>Thu 12 June 2014</p>
+                <a href="http://pythonclub.com.br/">←Home</a>
+            </hgroup>
+        </header>
+    </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Introdução a Classes e Métodos em Python (básico)</h1>
+                        <p class="post-meta">
+                            // Tags                                 <a class="post-category" href="http://pythonclub.com.br/tag/python.html">python</a>
+                                <a class="post-category" href="http://pythonclub.com.br/tag/classes.html">classes</a>
+                                <a class="post-category" href="http://pythonclub.com.br/tag/metodos.html">métodos</a>
+                        </p>
+                </header>
+            </section>
+            <p>Eu não sou a melhor pessoa do mundo para explicar este assunto, mas vou tentar fazer uma breve introdução a classes e métodos em Python.</p>
+<p>Mais informações sobre classes e métodos podem ser encontradas nos links abaixo. Veja os exemplos em <a class="reference external" href="https://github.com/rg3915/python-classes-metodos/tree/master/pythonBasico">https://github.com/rg3915/python-classes-metodos</a>.</p>
+<p>&gt; Este artigo foi atualizado em 26 de Maio de 2018.</p>
+<p>PS: <em>Considere a sintaxe para Python 3</em>.</p>
+<p>Segundo a documentação do <a class="reference external" href="https://docs.python.org/3/tutorial/classes.html#class-objects">Python</a> e o video <a class="reference external" href="https://www.youtube.com/watch?v=Zr_FiKbgRbU">Python para Zumbis</a>, uma <strong>classe</strong> associa dados (<strong>atributos</strong>) e operações (<strong>métodos</strong>) numa só estrutura. Um <strong>objeto é uma instância</strong> de uma classe. Ou seja, uma representação da classe. Por exemplo, Regis é uma instância de uma classe chamada Pessoa, mas a Pessoa é a classe que o representa de uma forma genérica. Se você criar um outro objeto chamado Fabio, esse objeto também será uma instancia da classe Pessoa.</p>
+<p>Na sua sintaxe mais elementar definimos uma classe conforme abaixo:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NomeDaClasse</span><span class="p">:</span>
+        <span class="k">pass</span>
+</pre></div>
+<p>E um método (função) como:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">metodo</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+<p>onde <tt class="docutils literal">args</tt> são argumentos opcionais (parâmetros de entrada).
+A função <tt class="docutils literal">metodo</tt> pode retornar um valor de saída:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">metodo</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">args</span>
+</pre></div>
+<p>Juntando os dois temos:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NomeDaClasse</span><span class="p">:</span>
+
+        <span class="k">def</span> <span class="nf">metodo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+                <span class="k">pass</span>
+</pre></div>
+<p>A primeira pergunta que você vai ter é o porque do <tt class="docutils literal">self</tt> em <tt class="docutils literal">metodo</tt>. A resposta curta é, todo metodo criado dentro de uma classe deve definir como primeiro parametro o <tt class="docutils literal">self</tt>. Para a resposta longa, por favor, leia a excelente explicação que o Pedro Werneck fez: <a class="reference external" href="http://archive.is/cX2mq">O porquê do self explícito em Python</a></p>
+<p>A segunda pergunta é: para que serve o <tt class="docutils literal">pass</tt>?</p>
+<p>A resposta é que, em Python, ao contrario de várias outras liguagens de programação, os blocos de código <strong>NÃO</strong> são definidos com os caracteres <tt class="docutils literal">{</tt> e <tt class="docutils literal">}</tt>, mas sim com indentação e o caractere <tt class="docutils literal">:</tt>. Devido a esse fato, python necessitava de algo para explicitar quando se quer definir um bloco vazio. O <tt class="docutils literal">pass</tt> foi criado exatamente para explicitar essa situação.</p>
+<p>Um exemplo de uma função vazia feita em linguagem C e a mesma função vazia feita em Python:</p>
+<div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">metodo</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">){</span>
+
+<span class="p">}</span>
+</pre></div>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">metodo</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+<p>Importante: Note que para nome de <strong>classes</strong> usamos <em>PalavrasComeçandoPorMaiúscula</em> (isso tambem é conhecido como "<a class="reference external" href="http://pep8.org/#descriptive-naming-styles">CapitalizeWords</a>") e para nome de <strong>métodos (funções)</strong> usamos <em>minúsculas_separadas_por_underscore</em>. Esta é uma convenção adotada pelos <em>Pythonistas</em> segundo o <a class="reference external" href="http://www.python.org.br/wiki/GuiaDeEstilo">Guia de Estilo</a> <strong>PEP 8</strong> - <a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/">Style Guide for Python Code</a> escrito por <a class="reference external" href="http://www.python.org.br/wiki/GuidoVanRossum">Guido Van Rossum</a>.</p>
+<div class="section" id="exemplo-0-pessoa">
+<h2>Exemplo 0 - Pessoa</h2>
+<p>No exemplo mencionado no começo desse post o código mais simples seria o seguinte:</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pessoa</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nome</span>
+
+
+<span class="n">regis</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s1">'Regis'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">regis</span><span class="p">)</span>
+<span class="n">fabio</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s1">'Fabio'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fabio</span><span class="p">)</span>
+</pre></div>
+<p>Note que <tt class="docutils literal">regis</tt> é uma instância da classe <tt class="docutils literal">Pessoa</tt>, e <tt class="docutils literal">fabio</tt> é uma outra instância. Ou seja, temos dois <strong>objetos</strong>: <tt class="docutils literal">regis</tt> e <tt class="docutils literal">fabio</tt>.</p>
+<p>Os dois métodos serão explicados no próximo exemplo.</p>
+</div>
+<div class="section" id="exemplo-1-calculadora-simples">
+<h2>Exemplo 1 - Calculadora simples</h2>
+<p>Existem pelo menos duas formas diferentes de trabalhar com os parâmetros de entrada. Neste exemplo, definiremos o <strong>parâmetro apenas uma vez</strong> com um método especial do Python chamado <tt class="docutils literal">__init__</tt>. Segundo <a class="reference external" href="http://homepages.dcc.ufmg.br/~joaoreis/Site%20de%20tutoriais/aprendendopython/poo.html#init">João Reis</a>, este método é chamado quando um objeto de uma classe é instânciado. Este método é útil para fazer qualquer inicialização que você queira com seu objeto, ou seja, ele é o método <strong>"Inicializador"</strong> da instancia.</p>
+<div class="highlight"><pre><span></span><span class="c1">#calculadora.py</span>
+<span class="k">class</span> <span class="nc">Calculadora</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">a</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">b</span>
+
+    <span class="k">def</span> <span class="nf">soma</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
+
+    <span class="k">def</span> <span class="nf">subtrai</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
+
+    <span class="k">def</span> <span class="nf">multiplica</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
+
+    <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
+</pre></div>
+<p>Note que definimos dois parâmetros <tt class="docutils literal">a</tt> e <tt class="docutils literal">b</tt> (dentro do parênteses). E o <tt class="docutils literal">self.a</tt> é um novo campo.</p>
+<p>Poderíamos definir</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">param1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">param2</span>
+</pre></div>
+<p>para não confundir, mas usualmente usamos o mesmo nome tanto no parâmetro quanto no novo campo.</p>
+<p>Como dito antes, definimos os valores iniciais apenas uma vez e depois apenas usamos os métodos para calcular os valores.</p>
+<p>Podemos rodar o Python no modo <a class="reference external" href="https://docs.python.org/3/tutorial/interpreter.html#interactive-mode">modo interativo</a> pelo terminal e importar a classe (veja este <a class="reference external" href="https://www.youtube.com/watch?v=M1BAlDufqao">video</a>).</p>
+<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">python3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">calculadora</span> <span class="kn">import</span> <span class="n">Calculadora</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Calculadora</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s1">'Soma:'</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">soma</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s1">'Subtração:'</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">subtrai</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s1">'Multiplicação:'</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">multiplica</span><span class="p">())</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s1">'Divisão:'</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">divide</span><span class="p">())</span>
+</pre></div>
+<p><tt class="docutils literal">c = Calculadora(128,2)</tt> é uma instância da classe com dois valores iniciais.</p>
+<p>O resultado é:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">Soma</span><span class="p">:</span> <span class="mi">130</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Subtra</span><span class="err">çã</span><span class="n">o</span><span class="p">:</span> <span class="mi">126</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Multiplica</span><span class="err">çã</span><span class="n">o</span><span class="p">:</span> <span class="mi">256</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Divis</span><span class="err">ã</span><span class="n">o</span><span class="p">:</span> <span class="mf">64.0</span>
+</pre></div>
+<p>Podemos redefinir os valores iniciais da seguinte forma:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">c</span><span class="o">.</span><span class="n">soma</span><span class="p">()</span>
+</pre></div>
+<p>Resultado:</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mi">54</span>
+</pre></div>
+<p>Importante: apesar de não fazer parte do escopo deste artigo, mas vejam este video <a class="reference external" href="https://www.youtube.com/watch?v=_HZOAWOrXrQ">Operadores aritméticos e divisão no Python 2 e Python 3</a>, explicando sobre a diferença no resultado da divisão nas duas versões do Python.</p>
+<p>Vejam também este artigo sobre ponto flutuante: <a class="reference external" href="https://docs.python.org/3.1/tutorial/floatingpoint.html">Floating Point Arithmetic Issues and Limitations</a>.</p>
+</div>
+<div class="section" id="exemplo-2-calculadora">
+<h2>Exemplo 2 - Calculadora</h2>
+<p>Agora faremos uma classe sem valor inicial e com <strong>dois parâmetros</strong> <em>para todos os métodos</em>.</p>
+<div class="highlight"><pre><span></span><span class="c1">#calculadora2.py</span>
+<span class="k">class</span> <span class="nc">Calculadora</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">soma</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+    <span class="k">def</span> <span class="nf">subtrai</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+
+    <span class="k">def</span> <span class="nf">multiplica</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+
+    <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</pre></div>
+<p>Usando o <strong>terminal no modo interativo</strong> façamos:</p>
+<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">python3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">calculadora2</span> <span class="kn">import</span> <span class="n">Calculadora</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Calculadora</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s1">'Soma:'</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">soma</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">Soma</span><span class="p">:</span> <span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s1">'Subtração:'</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">subtrai</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">Subtra</span><span class="err">çã</span><span class="n">o</span><span class="p">:</span> <span class="o">-</span><span class="mi">8</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s1">'Multiplicação:'</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">multiplica</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">Multiplica</span><span class="err">çã</span><span class="n">o</span><span class="p">:</span> <span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s1">'Divisão:'</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">Divis</span><span class="err">ã</span><span class="n">o</span><span class="p">:</span> <span class="mf">64.0</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+<p>A vantagem de colocar os parâmetros em cada método, é que podemos calcular qualquer valor sem ter que instanciar uma nova classe para cada valor diferente.</p>
+</div>
+<div class="section" id="exemplo-3-classe-pedido">
+<h2>Exemplo 3 - Classe Pedido</h2>
+<p>Agora veremos um outro exemplo, mas aqui iremos apenas instanciar os objetos e armazená-los em memória numa lista.</p>
+<p>Veremos o código na íntegra e depois os comentários.</p>
+<div class="highlight"><pre><span></span><span class="c1">#user.py</span>
+<span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+
+    <span class="n">seq</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">objects</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="n">idade</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">idade</span> <span class="o">=</span> <span class="n">idade</span>
+
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">seq</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">seq</span>
+        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nome</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">'&lt;{}: {} - {} - {}&gt;</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">idade</span><span class="p">)</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">all</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">objects</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">u1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s1">'Regis'</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
+    <span class="n">u1</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="n">u2</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s1">'Fabio'</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">u2</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+</pre></div>
+<p>Podemos rodar o Python no modo <a class="reference external" href="https://docs.python.org/3/tutorial/interpreter.html#interactive-mode">modo interativo</a> pelo terminal e importar a classe (veja este <a class="reference external" href="https://www.youtube.com/watch?v=M1BAlDufqao">video</a>).</p>
+<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">python3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">user</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">u1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s1">'Regis'</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">u1</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">u2</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s1">'Fabio'</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">u2</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="n">User</span><span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">Regis</span> <span class="o">-</span> <span class="mi">35</span><span class="o">&gt;</span>
+<span class="p">,</span> <span class="o">&lt;</span><span class="n">User</span><span class="p">:</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">Fabio</span> <span class="o">-</span> <span class="mi">20</span><span class="o">&gt;</span>
+<span class="p">]</span>
+</pre></div>
+<p>Agora os comentários:</p>
+<p>Definindo a classe</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+</pre></div>
+<p>Define um atributo que servirá como contador inicial e um atributo <tt class="docutils literal">objects</tt> (tupla vazia) que é uma lista de instâncias de <tt class="docutils literal">User</tt> que foram salvos (que chamaram o método <tt class="docutils literal">save</tt>).</p>
+<div class="highlight"><pre><span></span><span class="n">seq</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">objects</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+<p>Atribui um valor inicial aos atributos no momento da chamada do construtor.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="n">idade</span><span class="p">):</span>
+</pre></div>
+<p>Inicializando os atributos, <tt class="docutils literal">id</tt> começa com <tt class="docutils literal">None</tt>, pois a instância foi criada mas ainda não foi salva.</p>
+<div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">idade</span> <span class="o">=</span> <span class="n">idade</span>
+</pre></div>
+<p>Método para salvar os dados ele incrementa o atributo de classe que conta quantas instâncias foram salvas e adiciona a instância na lista de objects.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+<p><tt class="docutils literal">self.__class__</tt> acessa a classe que criou a instância, assim é possível acessar o atributo de <tt class="docutils literal">seq</tt>. Aqui poderia ser usado <tt class="docutils literal">User.seq</tt>, porém caso <tt class="docutils literal">User</tt> fosse herdado, o <tt class="docutils literal">seq</tt> seria o de <tt class="docutils literal">User</tt> e não da classe filha.</p>
+<div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">seq</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">seq</span>
+</pre></div>
+<p>Da mesma forma que acessamos <tt class="docutils literal">seq</tt>, acessamos objects e é feito um <tt class="docutils literal">append</tt> com a instância.</p>
+<div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+<p>Retorna uma representação do objeto como str, usado em conversões para string. Exemplo: <tt class="docutils literal">str(my_user), print my_user</tt>.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nome</span>
+</pre></div>
+<p>Retorna uma representação do objeto usada para outros objetos. Exemplo: quando é convertida uma lista de user para string.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</pre></div>
+<p><tt class="docutils literal">self.__class__.__name__</tt> é a forma de acessar o nome da classe que gerou a instância.</p>
+<div class="highlight"><pre><span></span><span class="k">return</span> <span class="s1">'&lt;{}: {} - {} - {}&gt;</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">idade</span><span class="p">)</span>
+</pre></div>
+<p>Class method usado para acessar todas as instâncias salvas (que chamaram o método <tt class="docutils literal">save</tt>). Aqui usamos um <tt class="docutils literal">@classmethod</tt>, pois faz mais sentido ser um método de classe do que de instância, pois estamos retornando informações da classe e não de uma instância isolada.</p>
+<div class="highlight"><pre><span></span><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">all</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">objects</span>
+</pre></div>
+<p>Demonstração do uso da classe.</p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+        <span class="n">u1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s1">'Regis'</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
+        <span class="n">u2</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s1">'Fabio'</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+</pre></div>
+<p>Note que nesse <tt class="docutils literal">print</tt> a lista está vazia.</p>
+<div class="highlight"><pre><span></span><span class="n">u1</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="n">u2</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
+</pre></div>
+<p>Após chamar o <tt class="docutils literal">save</tt> para as duas instâncias elas são guardadas e o método <tt class="docutils literal">User.all()</tt> retorna essa lista.</p>
+</div>
+<div class="section" id="exemplo-4-televisao">
+<h2>Exemplo 4 - Televisão</h2>
+<p>Escrevi mais um exemplo para fixar melhor o entendimento: <a class="reference external" href="https://github.com/rg3915/python-classes-metodos/blob/master/pythonBasico/tv/tv.py">tv.py</a>.</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Televisao</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ligada</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canal</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="k">def</span> <span class="nf">muda_canal_para_baixo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canal</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">muda_canal_para_cima</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canal</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+    <span class="n">tv</span> <span class="o">=</span> <span class="n">Televisao</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'Canal inicial:'</span><span class="p">,</span> <span class="n">tv</span><span class="o">.</span><span class="n">canal</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'Ligada:'</span><span class="p">,</span> <span class="n">tv</span><span class="o">.</span><span class="n">ligada</span><span class="p">)</span>
+
+    <span class="n">tv</span><span class="o">.</span><span class="n">ligada</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">tv</span><span class="o">.</span><span class="n">canal</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s1">'Ligada:'</span><span class="p">,</span> <span class="n">tv</span><span class="o">.</span><span class="n">ligada</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'Canal inicial:'</span><span class="p">,</span> <span class="n">tv</span><span class="o">.</span><span class="n">canal</span><span class="p">)</span>
+    <span class="n">tv</span><span class="o">.</span><span class="n">muda_canal_para_cima</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'Canal +'</span><span class="p">,</span> <span class="n">tv</span><span class="o">.</span><span class="n">canal</span><span class="p">)</span>
+    <span class="n">tv</span><span class="o">.</span><span class="n">muda_canal_para_cima</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'Canal +'</span><span class="p">,</span> <span class="n">tv</span><span class="o">.</span><span class="n">canal</span><span class="p">)</span>
+    <span class="n">tv</span><span class="o">.</span><span class="n">muda_canal_para_baixo</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">'Canal -'</span><span class="p">,</span> <span class="n">tv</span><span class="o">.</span><span class="n">canal</span><span class="p">)</span>
+</pre></div>
+<p>Este programa está muito bem explicado no video <a class="reference external" href="https://www.youtube.com/watch?v=Zr_FiKbgRbU">Python para Zumbis</a>.</p>
+<p>A seguir o resultado do programa:</p>
+<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">python</span> <span class="n">tv</span><span class="o">.</span><span class="n">py</span>
+<span class="p">(</span><span class="s1">'Canal inicial:'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="s1">'Ligada:'</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+<span class="p">(</span><span class="s1">'Ligada:'</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+<span class="p">(</span><span class="s1">'Canal inicial:'</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="p">(</span><span class="s1">'Canal +'</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="p">(</span><span class="s1">'Canal +'</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="p">(</span><span class="s1">'Canal -'</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+<p>Agradeço a colaboração de <a class="reference external" href="https://gist.github.com/fabiocerqueira/1b05352a26892dea6813">Fabio Cerqueira</a>.</p>
+<p>Veja os exemplos em <a class="reference external" href="https://github.com/rg3915/pythonDesktopApp/tree/master/pythonBasico">https://github.com/rg3915/pythonDesktopApp</a>.</p>
+<p>Mais informações em</p>
+<p><a class="reference external" href="https://docs.python.org/2/tutorial/classes.html#class-objects">Classes Python</a></p>
+<p><a class="reference external" href="http://en.wikibooks.org/wiki/A_Beginner&#39;s_Python_Tutorial/Classes#Creating_a_Class">A Beginner's Python Tutorial/Classes</a></p>
+<p><a class="reference external" href="https://julien.danjou.info/blog/2013/guide-python-static-class-abstract-methods">The definitive guide on how to use static, class or abstract methods in Python</a></p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=Zr_FiKbgRbU">Python para Zumbis</a></p>
+<p><a class="reference external" href="http://homepages.dcc.ufmg.br/~joaoreis/Site%20de%20tutoriais/aprendendopython/poo.html#init">João Reis</a></p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=_HZOAWOrXrQ">Operadores aritméticos e divisão no Python 2 e Python 3</a></p>
+<p><a class="reference external" href="https://docs.python.org/3.1/tutorial/floatingpoint.html">Floating Point Arithmetic Issues and Limitations</a></p>
+</div>
+
+
+            <div class="licence">
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/88x31.png"></a><br><a xmlns:dct="http://purl.org/dc/terms/" property="dct:title" href="http://pythonclub.com.br/introducao-classes-metodos-python-basico.html">"Introdução a Classes e Métodos em Python (básico)"</a> de <a xmlns:cc="http://creativecommons.org/ns#" href="http://pythonclub.com.br/author/regis-da-silva.html" property="cc:attributionName" rel="cc:attributionURL">"Regis da Silva"</a> está licenciado com uma Licença
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons -
+                    Atribuição-NãoComercial-SemDerivações 4.0 Internacional</a>.
+            </div>
+
+            <div class="sharing">
+                <!-- Facebook sharing -->
+                <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/mp2v3DK3INU.html" style="border: none; margin-bottom: -6px;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+                <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&appId=1487080281503641&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+                <div class="fb-share-button fb_iframe_widget" data-href="http://pythonclub.com.br/introducao-classes-metodos-python-basico.html" data-type="button_count" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=1487080281503641&amp;container_width=750&amp;href=http%3A%2F%2Fpythonclub.com.br%2Fintroducao-classes-metodos-python-basico.html&amp;locale=pt_BR&amp;sdk=joey&amp;type=button_count"><span style="vertical-align: bottom; width: 113px; height: 20px;"><iframe name="f173fc7f6a402c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:share_button Facebook Social Plugin" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/share_button.html" style="border: none; visibility: visible; width: 113px; height: 20px;" class=""></iframe></span></div>
+
+                <!-- Google+ sharing -->
+                <div id="___plus_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 93px; height: 20px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 93px; margin: 0px 0px -6px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1537746353083" name="I0_1537746353083" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/sharebutton.html" data-gapiattached="true" title="G+"></iframe></div>
+
+                <!-- Twitter sharing -->
+                <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 70px; height: 20px; margin-bottom: -5px; margin-left: -1px;" title="Twitter Tweet Button" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/tweet_button.652d02f198dd94ec761c32cf3c621737.pt.html"></iframe>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+
+            <div class="hr"></div>
+            <a href="http://pythonclub.com.br/introducao-classes-metodos-python-basico.html#" class="go-top" style="display: inline;">Topo</a>
+                <div class="comments">
+                    <div id="disqus_thread"><iframe id="dsq-app2064" name="dsq-app2064" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 3122px !important; margin-bottom: -6px;" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="indicator-north" name="indicator-north" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 750px !important; border: none !important; overflow: hidden !important; top: 0px !important; min-width: 750px !important; max-width: 750px !important; position: fixed !important; z-index: 2147483646 !important; height: 0px !important; min-height: 0px !important; max-height: 0px !important; display: none !important;" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/saved_resource(1).html"></iframe><iframe id="indicator-south" name="indicator-south" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 750px !important; border: none !important; overflow: hidden !important; bottom: 0px !important; min-width: 750px !important; max-width: 750px !important; position: fixed !important; z-index: 2147483646 !important; height: 0px !important; min-height: 0px !important; max-height: 0px !important; display: none !important;" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/saved_resource(2).html"></iframe></div>
+                    <script type="text/javascript">
+                        /* * * CONFIGURATION VARIABLES: THIS CODE IS ONLY AN EXAMPLE * * */
+                        var disqus_shortname = 'pythonclub'; // Required - Replace example with your forum shortname
+                        var disqus_identifier = 'introducao-classes-metodos-python-basico.html';
+                        var disqus_title = 'Introdução a Classes e Métodos em Python (básico)';
+                        var disqus_url = 'http://pythonclub.com.br/introducao-classes-metodos-python-basico.html';
+                    
+                        /* * * DON'T EDIT BELOW THIS LINE * * */
+                        (function() {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="<a class="vglnk" href="http://disqus.com/?ref_noscript" rel="nofollow"><span>http</span><span>://</span><span>disqus</span><span>.</span><span>com</span><span>/?</span><span>ref</span><span>_</span><span>noscript</span></a>">comments powered by Disqus.</a></noscript>
+                    
+                </div>
+<footer class="footer">
+    <p>© PythonClub –
+        Built with <a href="https://github.com/PurePelicanTheme/pure">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+</div>
+
+
+    <script src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/jquery.min.js"></script>
+    <script src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/dynamic_random_articles.js"></script>
+
+    <script src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+        $(window).load(function(){
+          $("iframe").css("margin-bottom", "-6px")
+          $("#twitter-widget-0").css("margin-bottom", "-5px");
+          $("#twitter-widget-0").css("margin-left", "-1px");
+        });
+    </script>
+    <script type="text/javascript" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/platform.js" gapi_processed="true">
+      {lang: 'pt-BR'}
+    </script>
+
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+
+        $(function(){
+            show_random_articles($('#random-articles'), [{"url": "http://pythonclub.com.br/upload-de-arquivos-com-socket-e-struct.html", "title": "Upload de Arquivos com Socket e Struct"}, {"url": "http://pythonclub.com.br/monitorando-ips-duplicados-na-rede.html", "title": "Monitorando Ips Duplicados na Rede"}, {"url": "http://pythonclub.com.br/django-rest-framework-class-based-views.html", "title": "Django Rest Framework - #3 Class Based Views"}, {"url": "http://pythonclub.com.br/django-rest-framework-requests-responses.html", "title": "Django Rest Framework - #2 Requests and Responses"}, {"url": "http://pythonclub.com.br/progrmacao-funcional-com-python-2.html", "title": "Programa\u00e7\u00e3o funcional com Python #2 - Iteraveis e iteradores"}, {"url": "http://pythonclub.com.br/progrmacao-funcional-com-python-1.html", "title": "Programa\u00e7\u00e3o funcional com Python #1 - Fun\u00e7\u00f5es"}, {"url": "http://pythonclub.com.br/progrmacao-funcional-com-python-0.html", "title": "Programa\u00e7\u00e3o funcional com Python #0 - Saindo da zona de conforto"}, {"url": "http://pythonclub.com.br/peewee-um-orm-python-minimalista.html", "title": "Peewee - Um ORM Python minimalista"}, {"url": "http://pythonclub.com.br/what-the-flask-pt-4-extensoes-para-o-flask.html", "title": "What the Flask? pt 4 - Extens\u00f5es para o Flask"}, {"url": "http://pythonclub.com.br/configurando-python-3.5-openshift-flask-gunicorn.html", "title": "Configurando OpenShift com Python 3.5 + Flask + Gunicorn"}, {"url": "http://pythonclub.com.br/instalando-o-python-vers\u00e3o-3.7.0-alpha-1-no-ubuntu-16.04.md.html", "title": "Instalando o Python vers\u00e3o 3.7.0 alpha 1 no Ubuntu 16.04"}, {"url": "http://pythonclub.com.br/abrangencia-de-listas-e-dicionarios-com-python.html", "title": "Abrang\u00eancia de Listas e Dicion\u00e1rios"}, {"url": "http://pythonclub.com.br/debugging-logging.html", "title": "Debugging - logging"}, {"url": "http://pythonclub.com.br/deploy-rapido-simples-com-dokku.html", "title": "Deploy r\u00e1pido e simples com Dokku"}, {"url": "http://pythonclub.com.br/bot-telegram-mais-web-scraping-parte-1.html", "title": "Bot telegram mais web scraping - parte 1"}, {"url": "http://pythonclub.com.br/como-distribuir-sua-aplicacao-python-com-pypi.html", "title": "Como distribuir sua aplica\u00e7\u00e3o Python com PyPI"}, {"url": "http://pythonclub.com.br/python-webassets-elm.html", "title": "Python webassets & Elm"}, {"url": "http://pythonclub.com.br/curso-asyncio-aula1.html", "title": "Curso Python asyncio: Aula 01 - Iterators e Generators"}, {"url": "http://pythonclub.com.br/curso-asyncio-aula00.html", "title": "Curso Python asyncio: Aula 00 - Introdu\u00e7\u00e3o ao m\u00f3dulo asyncio"}, {"url": "http://pythonclub.com.br/gerando-relatorios-de-testes-com-coveralls.html", "title": "Relat\u00f3rios de testes com Coveralls"}, {"url": "http://pythonclub.com.br/python-com-unittest-travis-ci-coveralls-e-landscape-parte-4-de-4.html", "title": "Python com Unittest, Travis CI, Coveralls e Landscape (Parte 4 de 4)"}, {"url": "http://pythonclub.com.br/python-com-unittest-travis-ci-coveralls-e-landscape-parte-3-de-4.html", "title": "Python com Unittest, Travis CI, Coveralls e Landscape (Parte 3 de 4)"}, {"url": "http://pythonclub.com.br/python-com-unittest-travis-ci-coveralls-e-landscape-parte-2-de-4.html", "title": "Python com Unittest, Travis CI, Coveralls e Landscape (Parte 2 de 4)"}, {"url": "http://pythonclub.com.br/python-com-unittest-travis-ci-coveralls-e-landscape-parte-1-de-4.html", "title": "Python com Unittest, Travis CI, Coveralls e Landscape (Parte 1 de 4)"}, {"url": "http://pythonclub.com.br/github-pages-com-pelican-e-travis-ci.html", "title": "GitHub Pages com Pelican e Travis-CI"}, {"url": "http://pythonclub.com.br/sites-estaticos-com-lektor.html", "title": "Sites Est\u00e1ticos com Lektor"}, {"url": "http://pythonclub.com.br/django-rest-framework-serialization.html", "title": "Django Rest Framework Serialization"}, {"url": "http://pythonclub.com.br/explicit-is-better-than-implicit.html", "title": "Explicit is better than implicit"}, {"url": "http://pythonclub.com.br/tdd-com-python-e-flask.html", "title": "TDD com Python e Flask"}, {"url": "http://pythonclub.com.br/upload-de-arquivos-no-django-entendendo-os-modos-de-leitura.html", "title": "Upload de arquivos no Django: entendendo os modos de leitura"}, {"url": "http://pythonclub.com.br/python-generators.html", "title": "Python Generators"}, {"url": "http://pythonclub.com.br/paralelismo-em-python-usando-concurrent.futures.html", "title": "Paralelismo em Python usando concurrent.futures"}, {"url": "http://pythonclub.com.br/salvando-grafico-github-python-selenium.html", "title": "Salvando gr\u00e1fico de contribui\u00e7\u00f5es do Github com Python e Selenium"}, {"url": "http://pythonclub.com.br/como-encontrar-solucoes-python.html", "title": "Como encontrar solu\u00e7\u00f5es para seus problemas com Python"}, {"url": "http://pythonclub.com.br/criando-novos-comandos-no-django-admin.html", "title": "Criando novos comandos no django-admin"}, {"url": "http://pythonclub.com.br/extraindo-texto-de-imagens-com-python.html", "title": "Extraindo Texto de Imagens com Python"}, {"url": "http://pythonclub.com.br/django-rest-framework-quickstart.html", "title": "Django Rest Framework Quickstart"}, {"url": "http://pythonclub.com.br/material-do-tutorial-web-scraping-na-nuvem.html", "title": "Web Scraping na Nuvem com Scrapy"}, {"url": "http://pythonclub.com.br/class-based-views-django.html", "title": "Class Based Views no Django"}, {"url": "http://pythonclub.com.br/django-na-pratica-aula-01.html", "title": "Django na pr\u00e1tica - Hello World"}, {"url": "http://pythonclub.com.br/what-the-flask-pt-3-plug-use-extensoes-essenciais-para-iniciar-seu-projeto.html", "title": "What the Flask? Pt-3 Plug & Use - extens\u00f5es essenciais para iniciar seu projeto"}, {"url": "http://pythonclub.com.br/raspando-a-web-com-python-parte-1.html", "title": "Raspando a Web com Python: Introdu\u00e7\u00e3o"}, {"url": "http://pythonclub.com.br/instalando-pycharm-ubuntu.html", "title": "Instalando o PyCharm no Ubuntu (e irm\u00e3os)"}, {"url": "http://pythonclub.com.br/a-armadilha-dos-argumentos-com-valores-padrao.html", "title": "A armadilha dos argumentos com valores padr\u00e3o"}, {"url": "http://pythonclub.com.br/desenvolvendo-para-google-app-engine-com-tekton.html", "title": "Cria\u00e7\u00e3o de aplica\u00e7\u00f5es no Google App Engine com o Tekton"}, {"url": "http://pythonclub.com.br/django-introducao-queries.html", "title": "Como otimizar suas consultas no Django - De N a 1 em 20 minutos"}, {"url": "http://pythonclub.com.br/django-overview-10-minutos.html", "title": "Django - 3 anos em 10 minutos"}, {"url": "http://pythonclub.com.br/configurando-ambiente-django-com-apache-e-mod-wsgi.html", "title": "Configurando ambiente Django com Apache e mod_wsgi"}, {"url": "http://pythonclub.com.br/tuplas-mutantes-em-python.html", "title": "Tuplas mutantes em Python"}, {"url": "http://pythonclub.com.br/postgresql-e-django.html", "title": "PostgreSql e Django - parte 3"}, {"url": "http://pythonclub.com.br/postgresql-e-python3.html", "title": "PostgreSql e Python3 - parte 2"}, {"url": "http://pythonclub.com.br/microframework-contra-baterias-incluidas.html", "title": "Microframework contra &quot;Baterias Inclu\u00eddas&quot;"}, {"url": "http://pythonclub.com.br/debugging-em-python-sem-ide.html", "title": "Debugging em python (sem IDE)"}, {"url": "http://pythonclub.com.br/tutorial-postgresql.html", "title": "Tutorial PostgreSql - parte 1"}, {"url": "http://pythonclub.com.br/conteinerizando-suas-aplicacoes-django-com-docker-e-fig.html", "title": "Conteinerizando suas aplica\u00e7\u00f5es django com docker e fig"}, {"url": "http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html", "title": "Publicando seu Hello World no Heroku"}, {"url": "http://pythonclub.com.br/entrevista-henrique-bastos.html", "title": "Entrevista com Henrique Bastos"}, {"url": "http://pythonclub.com.br/testes-de-carga-com-o-locust.html", "title": "Testes de carga com o Locust"}, {"url": "http://pythonclub.com.br/tutorial-django-17.html", "title": "Tutorial Django 1.7"}, {"url": "http://pythonclub.com.br/integrando-django-com-cloudinary.html", "title": "Integrando o Django com Cloudinary"}, {"url": "http://pythonclub.com.br/bottle-framework-full-stack-sem-django.html", "title": "Bottle Framework full stack sem Django"}, {"url": "http://pythonclub.com.br/desenvolvendo-com-bottle-parte-1.html", "title": "Desenvolvendo com Bottle - Parte 1"}, {"url": "http://pythonclub.com.br/gerenciando-banco-dados-sqlite3-python-parte2.html", "title": "Gerenciando banco de dados SQLite3 com Python - Parte 2"}, {"url": "http://pythonclub.com.br/solucao-quase-definitiva-para-permissoes-em-projetos-django.html", "title": "Solu\u00e7\u00e3o (quase) definitiva para permiss\u00f5es em projetos Django"}, {"url": "http://pythonclub.com.br/gerenciando-assets-com-django-pipeline.html", "title": "Gerenciando assets com django-pipeline"}, {"url": "http://pythonclub.com.br/deploy-app-django-openshift.html", "title": "Deploy App Django no Openshift"}, {"url": "http://pythonclub.com.br/criando-sites-estaticos-com-pelican.html", "title": "Criando sites est\u00e1ticos com Pelican Framework"}, {"url": "http://pythonclub.com.br/selenium-parte-4.html", "title": "Selenium - O que voc\u00ea deveria saber - Parte 4"}, {"url": "http://pythonclub.com.br/configurando-um-servidor-de-producao-para-aplicacoes-python.html", "title": "Configurando um servidor de produ\u00e7\u00e3o para aplica\u00e7\u00f5es Python"}, {"url": "http://pythonclub.com.br/what-the-flask-pt-2-flask-patterns-boas-praticas-na-estrutura-de-aplicacoes-flask.html", "title": "What the Flask? Pt-2 Flask Patterns - boas pr\u00e1ticas na estrutura de aplica\u00e7\u00f5es Flask"}, {"url": "http://pythonclub.com.br/gerenciando-banco-dados-sqlite3-python-parte1.html", "title": "Gerenciando banco de dados SQLite3 com Python - Parte 1"}, {"url": "http://pythonclub.com.br/introducao-classes-metodos-python-basico.html", "title": "Introdu\u00e7\u00e3o a Classes e M\u00e9todos em Python (b\u00e1sico)"}, {"url": "http://pythonclub.com.br/pyftpdlib-criando-um-servidor-ftp-simples-com-python.html", "title": "pyftpdlib - Criando um servidor FTP simples com python"}, {"url": "http://pythonclub.com.br/usando-redis-cache-django.html", "title": "Usando Redis para cache e sess\u00e3o do Django"}, {"url": "http://pythonclub.com.br/aprendendo-e-ensinando-python.html", "title": "Aprendendo e Ensinando Python"}, {"url": "http://pythonclub.com.br/selenium-parte-3.html", "title": "Selenium - O que voc\u00ea deveria saber - Parte 3"}, {"url": "http://pythonclub.com.br/what-the-flask-pt-1-introducao-ao-desenvolvimento-web-com-python.html", "title": "What the Flask? Pt-1 Introdu\u00e7\u00e3o ao desenvolvimento web com Python"}, {"url": "http://pythonclub.com.br/selenium-parte-2.html", "title": "Selenium - O que voc\u00ea deveria saber - Parte 2"}, {"url": "http://pythonclub.com.br/guia-rapido-comandos-sqlite3.html", "title": "Guia r\u00e1pido de comandos SQLite3"}, {"url": "http://pythonclub.com.br/editando-o-admin-do-django.html", "title": "Editando o Admin do Django"}, {"url": "http://pythonclub.com.br/instalacao-python-django-windows.html", "title": "Instalando e Configurando o Python e Django no Windows"}, {"url": "http://pythonclub.com.br/criar-site-com-form-lista-30-min.html", "title": "Como criar um site com formul\u00e1rio e lista em 30 minutos?"}, {"url": "http://pythonclub.com.br/principais-duvidas-de-quem-quer-aprender-django.html", "title": "Principais d\u00favidas de quem quer aprender Django"}, {"url": "http://pythonclub.com.br/parseando-sites-com-beautifulsoup.html", "title": "Exemplo de como &quot;Parsear&quot; Sites com BeautifulSoup"}, {"url": "http://pythonclub.com.br/deploy-com-django-fagungis.html", "title": "Publica\u00e7\u00e3o de projetos com o Django-Fagungis"}, {"url": "http://pythonclub.com.br/como-fazer-fork-clone-push-pull-request-no-github.html", "title": "Como fazer fork, clone, push pull-request no Github"}, {"url": "http://pythonclub.com.br/primeiro-projeto-django-no-linux-com-sublime.html", "title": "Seu primeiro projeto Django com Sublime Text no Linux"}, {"url": "http://pythonclub.com.br/introducao-a-testes-funcionais-com-selenium-e-python.html", "title": "Introdu\u00e7\u00e3o a testes funcionais com Selenium e Python"}, {"url": "http://pythonclub.com.br/selenium-parte-1.html", "title": "Selenium - O que voc\u00ea deveria saber - Parte 1"}, {"url": "http://pythonclub.com.br/5-django-apps-que-nao-vivo-se.html", "title": "5 Django Apps que n\u00e3o vivo sem"}, {"url": "http://pythonclub.com.br/sobre-o-six-e-como-ele-ajuda-a-escrever-codigo-compativel-com-python-2-e-3.html", "title": "Sobre o six e como ele ajuda a escrever c\u00f3digo compat\u00edvel com python 2 e 3"}, {"url": "http://pythonclub.com.br/como_colaborar_com_projetos_open_source.html", "title": "Como colaborar na tradu\u00e7\u00e3o do Djangobook sem conhecer programa\u00e7\u00e3o"}], 10);
+        });
+        
+    </script>
+        <!-- spot_im -->
+        <!--    <div id="spot-im-root"></div> -->
+        <!--    <script type="text/javascript">!function(t,o,p){function e(){var t=o.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"==o.location.protocol?"https":"http")+":"+p,o.body.appendChild(t)}t.spotId="3de816246c80a51757bb01c5b8c95cda",t.spotName="",t.allowDesktop=!0,t.allowMobile=!1,t.containerId="spot-im-root",e()}(window.SPOTIM={},document,"//www.spot.im/embed/scripts/launcher.js");</script> -->
+        <!-- end spot_im -->
+   
+            <script>
+              ((window.gitter = {}).chat = {}).options = {
+                    room: 'pythonclub/pythonclub.github.io'
+              };
+            </script>
+            <script src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/sidecar.v1.js" async="" defer=""></script>
+   
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/widget_iframe.652d02f198dd94ec761c32cf3c621737.html" title="Twitter settings iframe" style="display: none; margin-bottom: -6px;"></iframe><iframe name="oauth2relay585730659" id="oauth2relay585730659" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px; margin-bottom: -6px;"></iframe><iframe style="display: none; margin-bottom: -6px;" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/saved_resource(3).html"></iframe><aside class="gitter-chat-embed is-collapsed"><div class="gitter-chat-embed-action-bar"><a class="gitter-chat-embed-action-bar-item gitter-chat-embed-action-bar-item-pop-out" aria-label="Open Chat in Gitter.im" href="https://gitter.im/pythonclub/pythonclub.github.io" target="_blank" rel="noopener"></a><button class="gitter-chat-embed-action-bar-item gitter-chat-embed-action-bar-item-collapse-chat" aria-label="Collapse Gitter Chat"></button></div><div class="gitter-chat-embed-loading-wrapper">
+        <div class="gitter-chat-embed-loading-indicator gitter-icon"></div>
+      </div></aside><a href="https://gitter.im/pythonclub/pythonclub.github.io" class="gitter-open-chat-button">Open Chat</a><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./Introdução a Classes e Métodos em Python (básico) por Regis da Silva __ #PythonClub ___files/saved_resource(4).html"></iframe></body></html>
